@@ -1,6 +1,6 @@
 <template>
   <div class="welcome">
-    <h1>{{ msg }}</h1>
+    <img class="side-logo" src="../assets/rebels.png">
   </div>
 </template>
 
@@ -19,5 +19,8 @@ export default {
 <style scoped>
 h1 {
   font-weight: normal;
+}
+.side-logo {
+  width: 200px;
 }
 </style>
