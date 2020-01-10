@@ -5,28 +5,41 @@
 </template>
 
 <script>
-// Criar um script que ao scrollar a tela esconde a barra de pesquisa do topo
-// E exibe um novo componente de barra de pesquisa, agora no rodapé.
-// Se possível, recuperar o valor do placeholder na mesma pesquisa
 export default {
   name: 'cardSearch',
-  props: ['place','idSearch','searchClass','icon'],
-  data () {
-    return {
-      // thePlaceHolder: "Pesquisar Gif's e Figurinhas"
-    }
-  },
+  props: ['place','idSearch','searchClass','icon']
 }
 </script>
 
 <style>
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 767px) {
+  #card-search {
+    background: #616161;    
+  }
   #card-search .input {
     width: 100%;
-    margin-bottom: 5px;
-    margin-top: 10px;
+    margin-bottom: 6px;
+    margin-top: 5.5px;
     height: 40px;
     font-size: 1.2em;
   }
+  .ui.input>input {
+    color: rgb(170, 170, 170);
+    border-radius: 0;
+  }
+  .ui.input>input:active {
+    color: rgb(170, 170, 170);
+  }
+  .ui.input>input:focus {
+    color: rgb(170, 170, 170);
+  }
+  .ui.icon.input>i.icon {
+    color: rgb(242, 242, 242);
+    background: #e31f21;
+    border-radius: 0px;
+  }
+  .ui.icon.input>i.icon:focus {
+    color: rgb(242, 242, 242);
+  }  
 }
 </style>

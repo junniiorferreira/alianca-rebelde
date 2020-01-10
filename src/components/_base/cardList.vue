@@ -39,7 +39,7 @@ export default {
 </script>
 
 <style>
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 767px) {
   #cardList {
     margin-top: 15px
   }
