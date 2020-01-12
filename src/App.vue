@@ -1,17 +1,19 @@
 <template>
   <div id="app">
-    <header-nav/>
+    <app-header
+      imgUrl="static/images/logo/rebels.png"
+    />
     <router-view/>
   </div>
 </template>
 
 <script>
-import headerNav from './components/_base/headerNav'
+import AppHeader from './components/AppHeader'
 
 export default {
   name: 'App',
   components: {
-    headerNav
+    AppHeader
   }
 }
 </script>
@@ -24,8 +26,6 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    /* background: #000; */
-    /* margin-top: 60px; */
   }
 }
 </style>

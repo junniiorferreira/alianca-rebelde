@@ -1,24 +1,24 @@
 <template>
-    <div id="cardList">
-        <sui-card-group :items-per-row="4" stackable>
-            <card-simple 
-                v-for="card in rendCards" 
-                v-bind:key="card.id"
-                :imgUrl="card.url"/>
-        </sui-card-group>
+    <div id="app-list">
+      <sui-card-group :items-per-row="4" stackable>
+        <app-list-card 
+          v-for="card in cards" 
+          v-bind:key="card.id"
+          :imgUrl="card.url"/>
+      </sui-card-group>
     </div>
 </template>
 
 <script>
-import cardSimple from './cardSimple'
+import AppListCard from './AppListCard'
 
 export default {
-  name: 'cardList',
+  name: 'AppList',
   data () {
     return {
         // Depois buscar essa lista através do axios, 
         // e reposicionar todos os cards na lista através de um get
-        rendCards: [
+        cards: [
             { id:0, url : 'static/images/avatar/large/elliot.jpg' },
             { id:1, url : 'static/images/avatar/large/helen.jpg' },
             { id:2, url : 'static/images/avatar/large/jenny.jpg' },
@@ -33,14 +33,14 @@ export default {
     }
   },
   components: {
-    cardSimple
+    AppListCard
   }
 }
 </script>
 
 <style>
 @media screen and (max-width: 767px) {
-  #cardList {
+  #app-list {
     margin-top: 15px
   }
 }

@@ -1,28 +1,34 @@
 <template>
-  <div :id=idSearch :class=searchClass>
-    <sui-input :placeholder=place :icon=icon />
+  <div :id=idSearch :class=searchClass v-show="inputShow">
+    <sui-input :placeholder=place :icon=icon @input="changed" name="flavor" />
+    <search-result/>
   </div>
 </template>
 
 <script>
+import SearchResult from './AppSearchResult'
+
 export default {
-  name: 'cardSearch',
-  props: ['place','idSearch','searchClass','icon']
+  name: 'AppSearch',
+  props: ['place','idSearch','searchClass','icon','callback'],
+  components: {
+    SearchResult
+  },
+  data() {
+    return {
+      inputShow: this.callback
+    }
+  },
+  methods: {
+    changed: function(event) {
+      this.$store.dispatch('changeAsync',event)
+    }
+  }
 }
 </script>
 
 <style>
 @media screen and (max-width: 767px) {
-  #card-search {
-    background: #616161;    
-  }
-  #card-search .input {
-    width: 100%;
-    margin-bottom: 6px;
-    margin-top: 5.5px;
-    height: 40px;
-    font-size: 1.2em;
-  }
   .ui.input>input {
     color: rgb(170, 170, 170);
     border-radius: 0;
