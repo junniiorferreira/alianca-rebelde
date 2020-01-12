@@ -4,6 +4,9 @@ import 'es6-promise/auto'
 
 Vue.use(Vuex);
 
+var apiKey = "g3RfbcwNKlj0o9UQ1HZEN5ml8J8GkeZS"
+var baseUrl = ""
+
 export const store = new Vuex.Store({
     state: {
         flavor: ''
@@ -16,7 +19,7 @@ export const store = new Vuex.Store({
     actions: {
         changeAsync ({ commit }, param) {
             setTimeout(() => {
-                commit('change', param)
+                commit('change', param.eventos)
             }, 1000)
         }
     },

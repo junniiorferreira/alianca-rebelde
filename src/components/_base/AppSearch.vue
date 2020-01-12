@@ -21,7 +21,10 @@ export default {
   },
   methods: {
     changed: function(event) {
-      this.$store.dispatch('changeAsync',event)
+      this.$store.dispatch({
+        type: 'changeAsync',
+        eventos: event
+      })
     }
   }
 }
