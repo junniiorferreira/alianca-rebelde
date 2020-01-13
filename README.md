@@ -1,21 +1,16 @@
 # alianca-rebelde
+Projeto de demonstração de habilidades em vanilla.js e es6
 
-> A Vue.js project
+> Esse é um projeto feito em VUE.JS
 
-## Build Setup
+## Faça você mesmo
+Antes de tudo, clone esse repositório em seu local e dentro da raíz do projeto execute: 
 
 ``` bash
-# install dependencies
+# Comando para instalar as dependências do node.js
 npm install
 
-# serve with hot reload at localhost:8080
+# Comando para iniciar um servidor local com o endereço: localhost:8080
 npm run dev
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+Isso é tudo pessoal...
