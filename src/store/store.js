@@ -9,11 +9,15 @@ var baseUrl = ""
 
 export const store = new Vuex.Store({
     state: {
-        flavor: ''
+        flavor: null,
+        gifList: null
     },
     mutations: {
         change(state, flav) {
             state.flavor = flav
+        },
+        saveFetch(state, gifs) {
+            state.gifList = gifs.trendings.data.data
         }
     },
     actions: {
@@ -21,9 +25,13 @@ export const store = new Vuex.Store({
             setTimeout(() => {
                 commit('change', param.eventos)
             }, 1000)
+        },
+        initFetch ({ commit }, params) {
+            commit('saveFetch', params)
         }
     },
     getters: {
-        flavor: state => state.flavor
+        flavor: state => state.flavor,
+        gifList: state => state.gifList
     }
 })

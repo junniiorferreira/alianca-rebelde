@@ -1,7 +1,6 @@
 <template>
   <div :id=idSearch :class=searchClass v-show="inputShow">
     <sui-input :placeholder=place :icon=icon @input="changed" name="flavor" />
-    <search-result/>
   </div>
 </template>
 

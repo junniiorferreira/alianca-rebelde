@@ -10,3 +10,10 @@
     props: ['imgUrl']
   }
 </script>
+
+<style scoped>
+  .ui.card img {
+    height: 300px;
+    width: 480px;
+  }
+</style>
