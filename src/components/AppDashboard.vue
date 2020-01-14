@@ -51,6 +51,8 @@ export default {
 @media screen and (min-width: 320px) {
   #app-dashboard {
     margin-top: 140px;
+    padding-left: 1vw;
+    padding-right: 1vw;
   }
 }
 </style>
