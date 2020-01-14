@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style>
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 320px) {
   .ui.input>input {
     color: rgb(170, 170, 170);
     border-radius: 0;

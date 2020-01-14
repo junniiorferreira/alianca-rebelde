@@ -13,7 +13,7 @@
 
 <style scoped>
   .ui.card img {
-    height: 300px;
-    width: 480px;
+    width: 100%;
+    height: 180px;
   }
 </style>

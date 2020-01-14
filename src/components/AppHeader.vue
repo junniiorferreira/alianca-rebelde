@@ -41,7 +41,7 @@ export default {
 </script>
 
 <style>
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 320px) {
   #app-search {
     background: #616161;    
   }

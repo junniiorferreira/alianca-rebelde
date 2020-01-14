@@ -1,43 +1,54 @@
 <template>
   <div id="app-dashboard">
     <sui-container fluid>
-      <app-list/>
+      <sui-card-group :items-per-row="4" stackable>
+        <app-list-card 
+          v-for="item in items" 
+          v-bind:key="item.id"
+          :imgUrl="item.images.preview_gif.url"/>        
+      </sui-card-group>
+      <observer
+        v-on:intersect="intersected"
+      />
     </sui-container>
   </div>
 </template>
 
 <script>
-import AppList from './_base/AppList'
-import axios from 'axios';
+import AppListCard from './_base/AppListCard'
+import Observer from './_base/Observer'
 
 export default {
   name: 'AppDashboard',
   data () {
     return {
-      error: []
+      apiKey: 'g3RfbcwNKlj0o9UQ1HZEN5ml8J8GkeZS',
+      total_count: 1000,
+      count: 12,
+      offset: 0,
+      items: []
     }
   },  
   created() {
-    axios.get(`https://api.giphy.com/v1/gifs/trending?api_key=g3RfbcwNKlj0o9UQ1HZEN5ml8J8GkeZS&limit=20&rating=G&offset=20`)
-    .then(response => {
-      this.posts = response
-      this.$store.dispatch({
-        type: 'initFetch',
-        trendings: response
-      })
-    })
-    .catch(e => {
-      this.error.push(e)
-    })
+    // this.$store.dispatch('loadGifs')
   },
   components: {
-    AppList
+    AppListCard,
+    Observer
+  },
+  methods: {
+    async intersected() {
+      const res = await fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${this.apiKey}&limit=${this.count}&rating=G&offset=${this.offset}`)
+      const items = await res.json()
+      this.items = [...this.items , ...items.data]
+      this.offset = (this.count + this.offset)
+    }
   }
 }
 </script>
 
 <style scoped>
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 320px) {
   #app-dashboard {
     margin-top: 140px;
   }
