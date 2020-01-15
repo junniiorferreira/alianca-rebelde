@@ -5,7 +5,7 @@
         <app-list-card 
           v-for="item in items" 
           v-bind:key="item.id"
-          :imgUrl="item.images.preview_gif.url"/>        
+          :imgUrl="item.images.preview_webp.url"/>        
       </sui-card-group>
       <observer
         v-on:intersect="intersected"
@@ -42,17 +42,21 @@ export default {
       const items = await res.json()
       this.items = [...this.items , ...items.data]
       this.offset = (this.count + this.offset)
+      console.log(items)
     }
   }
 }
 </script>
 
 <style scoped>
-@media screen and (min-width: 320px) {
   #app-dashboard {
-    margin-top: 140px;
+    margin-top: 70px;
     padding-left: 1vw;
     padding-right: 1vw;
+  }  
+  @media screen and (max-width: 639px) {
+    #app-dashboard {
+      margin-top: 100px;
+    }
   }
-}
 </style>

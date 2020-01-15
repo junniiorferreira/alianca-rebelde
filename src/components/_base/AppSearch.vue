@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style>
-@media screen and (min-width: 320px) {
+@media screen and (min-width: 320px) {}
   .ui.input>input {
     color: rgb(170, 170, 170);
     border-radius: 0;
@@ -45,9 +45,9 @@ export default {
     color: rgb(242, 242, 242);
     background: #e31f21;
     border-radius: 0px;
+    width: 30px;
   }
   .ui.icon.input>i.icon:focus {
     color: rgb(242, 242, 242);
-  }  
-}
+  } 
 </style>
