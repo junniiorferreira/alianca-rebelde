@@ -6,7 +6,7 @@
           v-for="item in items" 
           v-bind:key="item.id"
           :data="item"
-          :imgUrl="item.images.preview_webp.url"/>        
+          :imgUrl="item.images.preview_gif.url"/>        
       </sui-card-group>
       <observer
         v-on:intersect="intersected"
@@ -24,8 +24,8 @@ export default {
   data () {
     return {
       apiKey: 'g3RfbcwNKlj0o9UQ1HZEN5ml8J8GkeZS',
-      total_count: 1000,
-      count: 12,
+      total_count: 10000,
+      count: 25,
       offset: 0,
       items: [],
     }
