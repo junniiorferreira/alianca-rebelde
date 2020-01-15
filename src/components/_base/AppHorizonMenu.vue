@@ -5,7 +5,7 @@
                 DashBoard
             </a>
             <a class="item">
-                Favoritos
+                Favoritos (0)
             </a>
             <div class="right menu">
                 <a class="ui item">
