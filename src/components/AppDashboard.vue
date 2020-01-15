@@ -1,6 +1,7 @@
 <template>
   <div id="app-dashboard">
     <sui-container fluid>
+      
       <sui-card-group :items-per-row="4" stackable>
         <app-list-card 
           v-for="item in items" 
@@ -25,7 +26,7 @@ export default {
     return {
       apiKey: 'g3RfbcwNKlj0o9UQ1HZEN5ml8J8GkeZS',
       total_count: 10000,
-      count: 25,
+      count: 40,
       offset: 0,
       items: [],
     }
