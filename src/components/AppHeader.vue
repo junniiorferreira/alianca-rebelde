@@ -163,7 +163,7 @@ export default {
     margin-left: auto;
     margin-right: auto;
     position: fixed;
-    z-index: 1;
+    z-index: 99999;
     background: #313131;
     top: 0;    
   }

@@ -5,6 +5,7 @@
         <app-list-card 
           v-for="item in items" 
           v-bind:key="item.id"
+          :data="item"
           :imgUrl="item.images.preview_webp.url"/>        
       </sui-card-group>
       <observer
@@ -26,11 +27,8 @@ export default {
       total_count: 1000,
       count: 12,
       offset: 0,
-      items: []
+      items: [],
     }
-  },  
-  created() {
-    // this.$store.dispatch('loadGifs')
   },
   components: {
     AppListCard,
@@ -42,7 +40,7 @@ export default {
       const items = await res.json()
       this.items = [...this.items , ...items.data]
       this.offset = (this.count + this.offset)
-      console.log(items)
+      console.log(this.items)
     }
   }
 }

@@ -1,17 +1,37 @@
 <template>
-  <sui-card>
-    <sui-image :src=imgUrl />
+  <sui-card @dblclick="setAsFavorite">
+    <sui-image v-show="this.favorite" class="img-favorite" src="static/images/favorite.png" />
+    <sui-image :src=this.imgUrl />
   </sui-card>
 </template>
 
 <script>
   export default {
     name: 'AppListCard',
-    props: ['imgUrl']
+    props: ['imgUrl', 'data'],
+    data () {
+      return {
+        favorite: false
+      }
+    },
+    methods: {
+      async setAsFavorite(event) {
+        const clicked = await this.data
+        console.log(clicked)
+        this.favorite = !this.favorite
+      }      
+    }
   }
 </script>
 
 <style scoped>
+  img.img-favorite.ui.image {
+    position: absolute!important;
+    z-index: 100;
+    width: 30px;
+    height: 30px;
+    right: 0;
+  }
   .ui.card img {
     width: 100%;
     height: 200px;
