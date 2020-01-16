@@ -1,18 +1,18 @@
 <template>
     <div id="footer">
-        <div class="ui secondary pointing menu">
-            <a class="item active">
-                DashBoard
-            </a>
-            <a class="item">
-                Favoritos (0)
-            </a>
-            <div class="right menu">
-                <a class="ui item">
-                Sair
-                </a>
-            </div>
-        </div>
+        <ul class="ui secondary pointing menu">
+            <li class="item">
+                <router-link to="/" replace>Início</router-link>
+            </li>
+            <li class="item">
+                <router-link to="/favoritos" replace>Favoritos</router-link>
+            </li>
+            <ul class="right menu">
+                <li class="ui item">
+                <router-link to="/logout" replace>Sair</router-link>
+                </li>
+            </ul>
+        </ul>
     </div>
 </template>
 
@@ -24,6 +24,7 @@
 
 export default {
     name: 'AppVerticalMenu',
+    methods: {}
 }
 </script>
 

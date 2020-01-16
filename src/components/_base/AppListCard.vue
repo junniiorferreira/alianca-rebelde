@@ -1,5 +1,5 @@
 <template>
-  <sui-card @dblclick="setAsFavorite">
+  <sui-card @dblclick="setAsFavorite">  
     <sui-image v-show="this.favorite" class="img-favorite" src="static/images/favorite.png" />
     <sui-image :src=this.imgUrl />
   </sui-card>
@@ -8,7 +8,7 @@
 <script>
   export default {
     name: 'AppListCard',
-    props: ['imgUrl', 'data'],
+    props: ['imgUrl', 'data', 'isFavorite'],
     data () {
       return {
         favorite: false
@@ -16,10 +16,18 @@
     },
     methods: {
       async setAsFavorite(event) {
-        const clicked = await this.data
-        console.log(clicked)
-        this.favorite = !this.favorite
-      }      
+        if (this.isFavorite) {
+          console.log('é favorito')
+        } else {
+          const clicked = await this.data
+          if (this.favorite === false) {
+            this.$store.dispatch('pushToFav',clicked)
+            .then(() => {
+              this.favorite = true
+            })
+          }          
+        }
+      }
     }
   }
 </script>

@@ -1,0 +1,15 @@
+
+
+//Adicionar menu lateral
+    Adicionar copyright no rodapé da coluna
+    Adicionar menu "Favoritos" com a url "/favoritos"
+    Criar um componente Favoritos baseado na dashboard
+    Adicionar menu "Inicio" com a url "/dashboard"    
+//Adicionar layout favoritos
+    Criar um state dentro da store para favoritos
+    Criar action que faça um push do objeto selecionado para o state favoritos
+//Adicionar pesquisa
+    Criar action que pega a string no input de pesquisa e envie o resultado para uma action dentro da store
+    Criar uma mutation que faça um push para o state de favoritos
+
+Criar promises ou try's para tratar falhas no carregamento das requests

@@ -10,13 +10,17 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
     state: {
-        pagination: null,
-        gifList: null
-    },
+        gifList: null,
+        favList: []
+    },    
     mutations: {
         saveFetch(state, gifs) {
             state.gifList = gifs.data.data
             state.pagination = gifs.data.pagination
+        },
+        favSave(state, fav) {
+            state.favList.push(fav)
+            console.log(state.favList)
         }
     },
     actions: {
@@ -26,9 +30,16 @@ export const store = new Vuex.Store({
               .then(response => {
                 commit('saveFetch', response)
             })            
+        },
+        pushToFav ({commit}, item) {
+            commit('favSave',item)
+        },
+        removeToFav ({commit}, id) {
+            console.log(id)
         }
     },
     getters: {
-        gifList: state => state.gifList
-    }
+        gifList: state => state.gifList,
+        favList: state => state.favList
+    }        
 })

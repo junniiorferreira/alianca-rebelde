@@ -1,7 +1,5 @@
 <template>
-  <div class="observer">
-    <p>Carregando...</p>
-  </div>
+  <div class="observer"></div>
 </template>
 
 <script>
@@ -23,8 +21,4 @@ export default {
 }
 </script>
 
-<style>
-    .observer p{
-        padding: 30px;
-    }
-</style>
+<style></style>

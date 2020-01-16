@@ -24,4 +24,7 @@ export default {
         width: 100%;
         z-index: 200;
     }
+    ul.ui.secondary.pointing.menu {
+        padding: 0;
+    }    
 </style>

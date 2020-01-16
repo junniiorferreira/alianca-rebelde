@@ -3,9 +3,6 @@
     <div id="header-nav">
       <!-- Ou inserir um campo de busca no lugar das barras e colocar o menu flutuante na página de busca -->
       <!-- Ao clicar no campo de busca alterar o valor do callback em <app-search/> -->
-      <div class="header-menu">
-        <sui-button icon="bars"/>
-      </div>      
       <div class="header-logo">
         <sui-image :src="imgUrl" />
       </div>
