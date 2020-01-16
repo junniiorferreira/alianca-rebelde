@@ -1,21 +1,27 @@
 # alianca-rebelde
 
-> A Vue.js project
+> Nessa versão, estamos adicionando o template do sistema de favoritos.
+> Os gifs exibidos na dashboard contam com a função de "duplo clique". 
+> Sendo assim, basta dar 2 toques na imagem para adicioná-la a lista de favoritos
 
-## Build Setup
+> A lista de favoritos deve exibir um contador geral, ícone editor de informações
+> E ícone de remover favorito.
+
+>A lista dashboard também deve exibir um contador de postagens no feed
+
+## Setup
 
 ``` bash
-# install dependencies
+# Faça um clone do repositóio
+git clone https://github.com/junniiorferreira/alianca-rebelde/
+
+``` bash
+# Em seguida entre no repositório
+cd alianca-rebelde
+
+``` bash
+# instale as dependencias do projeto
 npm install
 
-# serve with hot reload at localhost:8080
+# Ativar servidor local (Com hot reload) -> localhost:8080
 npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
