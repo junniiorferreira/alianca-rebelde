@@ -15,8 +15,7 @@ export const store = new Vuex.Store({
     },    
     mutations: {
         saveFetch(state, gifs) {
-            state.gifList = gifs.data.data
-            state.pagination = gifs.data.pagination
+            state.gifList = gifs
         },
         favSave(state, fav) {
             state.favList.push(fav)
@@ -24,12 +23,8 @@ export const store = new Vuex.Store({
         }
     },
     actions: {
-        loadGifs ({ commit }) {
-            let promise = Axios.get("https://api.giphy.com/v1/gifs/trending?api_key=g3RfbcwNKlj0o9UQ1HZEN5ml8J8GkeZS&limit=12&rating=G&offset=0")
-            promise
-              .then(response => {
-                commit('saveFetch', response)
-            })            
+        pushToGifs ({commit}, gifs) {   
+            commit('saveFetch', gifs)
         },
         pushToFav ({commit}, item) {
             commit('favSave',item)
