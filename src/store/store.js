@@ -10,12 +10,24 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
     state: {
-        gifList: null,
+        gifList: [],
         favList: []
     },    
     mutations: {
         saveFetch(state, gifs) {
-            state.gifList = gifs
+            gifs.data.forEach(element => {
+                // console.log(element.id)
+                if (state.favList.includes(element)) {
+                    element['favorite'] = true    
+                }else{
+                    element['favorite'] = false
+                }
+
+                // console.log(element)
+                state.gifList.push(element)
+            });
+            // 
+            console.log(gifs)
         },
         favSave(state, fav) {
             state.favList.push(fav)

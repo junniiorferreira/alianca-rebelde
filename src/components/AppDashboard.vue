@@ -41,20 +41,19 @@ export default {
   },  
   methods: {
     async intersected() {
-      const res = await fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${this.apiKey}&limit=${this.count}&rating=G&offset=${this.offset}`)
-      const items = await res.json()
-        
-      this.$store.dispatch('pushToGifs', items.data)
 
       let horizon = {
         conf: {
           count: this.count,
           offset: this.offset          
         }
-      }
+      }    
 
-      this.offset = (this.count + this.offset)    
-      console.log(horizon)
+      const res = await fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${this.apiKey}&limit=${this.count}&rating=G&offset=${this.offset}`)
+      const items = await res.json()
+        
+      this.$store.dispatch('pushToGifs', items)
+      this.offset = (this.count + this.offset)
     }
   }
 }
